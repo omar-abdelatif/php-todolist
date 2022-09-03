@@ -1,9 +1,9 @@
 <!-- FOOTER -->
-<footer class="bg-light">
+<footer>
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="footer text-center">
+                <div class="footer text-center text-white p-5">
                     <p>All Copy Are Reserved</p>
                 </div>
             </div>

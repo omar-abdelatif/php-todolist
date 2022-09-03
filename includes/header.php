@@ -9,5 +9,5 @@
     <link rel="stylesheet" href="assets/styles/bootstrap.min.css">
     <link rel="stylesheet" href="assets/styles/styles.css">
 </head>
-<body>
+<body class="bg-dark">
     
