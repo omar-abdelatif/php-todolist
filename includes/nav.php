@@ -1,5 +1,6 @@
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
+    <div class="container">
         <a class="navbar-brand" href="#">To Do List</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -11,6 +12,12 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../register.php">Sign Up</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../login.php">Sign In</a>
             </li>
         </ul>
         <form class="d-flex" role="search">
