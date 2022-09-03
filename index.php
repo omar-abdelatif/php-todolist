@@ -1,7 +1,7 @@
 <?php
 
-echo "<h1>Welcome To My First PHP Project ( To Do List )</h1>";
+include "includes/header.php";
 
-?>
+include "includes/nav.php";
 
-<a href="dashboard.php">Go To Dashboard</a>
+include "includes/footer.php";
