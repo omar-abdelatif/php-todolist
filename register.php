@@ -18,8 +18,6 @@ if (isset($_POST['submit'])) {
     $res = insertUser($fname, $lname, $email, $password);
     if($res == 1){
         header("location: login.php");
-    } else {
-        header("location: error.php");
     }
 }
 

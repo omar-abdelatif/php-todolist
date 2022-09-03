@@ -1,5 +1,8 @@
 <?php
 
+// Session Start
+session_start();
+
 // Include Header
 include "lib/includes/header.php";
 
@@ -18,8 +21,13 @@ if(isset($_POST['submit'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
     $res = selectUser($email, $password);
-    // print_r($res);
-    header("location: index.php");
+    // print_r($res); die;
+    if(isset($res)){
+        $_SESSION['login'] = $res;
+        header("location: index.php");
+    } else {
+        header("location: login.php");
+    }
 }
 
 ?>
