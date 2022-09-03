@@ -12,6 +12,6 @@
 </footer>
 
 <!-- SCRIPTS -->
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="lib/assets/js/bootstrap.min.js"></script>
 </body>
 </html>
