@@ -19,6 +19,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="login.php">Sign In</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signout.php">SignOut</a>
+                </li>
             </ul>
             <form class="d-flex" role="search" action="" method="get">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
