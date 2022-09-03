@@ -6,6 +6,9 @@ include "includes/header.php";
 // Include Navbar
 include "includes/nav.php";
 
+// Include Connection
+include "database/config.php";
+
 ?>
 
 <form action="register.php" method="post">
