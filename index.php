@@ -1,7 +1,7 @@
 <?php
 
-include "includes/header.php";
+include "lib/includes/header.php";
 
-include "includes/nav.php";
+include "lib/includes/nav.php";
 
-include "includes/footer.php";
+include "lib/includes/footer.php";

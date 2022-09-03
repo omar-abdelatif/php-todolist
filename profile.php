@@ -1,13 +1,15 @@
 <?php
 
 // Include Header
-include "includes/header.php";
+include "lib/includes/header.php";
 
 // Include Navbar
-include "includes/nav.php";
+include "lib/includes/nav.php";
 
 // Include Footer
-include "includes/footer.php";
+include "lib/includes/footer.php";
+
+echo "<h1 class='d-flex justify-content-center align-items-center text-white'>Profile Page</h1>";
 
 ?>
 

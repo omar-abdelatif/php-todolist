@@ -1,10 +1,25 @@
 <?php
 
 // Include Header
-include "includes/header.php";
+include "lib/includes/header.php";
 
 // Include Navbar
-include "includes/nav.php";
+include "lib/includes/nav.php";
+
+// Include Connection
+include "lib/database/config.php";
+
+// Include Insert Users
+include "lib/handlers/insert.php";
+
+
+// Login Script
+
+if(isset($_POST['submit'])){
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    selectUser($mail, $password);
+}
 
 ?>
 

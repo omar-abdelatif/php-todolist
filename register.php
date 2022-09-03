@@ -1,22 +1,26 @@
 <?php
 
-// Include Header
-include "includes/header.php";
+include "lib/includes/header.php";
 
-// Include Navbar
-include "includes/nav.php";
+include "lib/includes/nav.php";
 
-// Include Connection
-include "database/config.php";
+include "lib/database/config.php";
 
-// Login Script
+include "lib/handlers/insert.php";
+
+// Signup Script
 
 if (isset($_POST['submit'])) {
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-
+    $res = insertUser($fname, $lname, $email, $password);
+    if($res == 1){
+        header("location: login.php");
+    } else {
+        header("location: error.php");
+    }
 }
 
 ?>
@@ -27,8 +31,8 @@ if (isset($_POST['submit'])) {
         <input type="text" name="fname" class="form-control mb-3 border-dark border border-2" placeholder="First Name">
         <input type="text" name="lname" class="form-control mb-3 border-dark border border-2" placeholder="Last Name">
         <input class="form-control mb-3 border-dark border border-2" type="email" name="email" placeholder="Enter Email">
-        <input class="form-control border-dark border border-2 mb-3" type="Password" name="Password" placeholder="Enter Password">
-        <input type="file" name="img" class="form-control border-dark border border-2">
+        <input class="form-control border-dark border border-2 mb-3" type="password" name="password" placeholder="Enter Password">
+        <!-- <input type="file" name="img" class="form-control border-dark border border-2"> -->
         <button type="submit" class="btn btn-primary mt-4 w-100" name="submit">Submit</button>
     </div>
 </form>
