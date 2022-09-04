@@ -1,5 +1,9 @@
 <?php
 
+// include "../database/config.php";
+
+// $connection = connection();
+// print_r($connection); die;
 function connection(){
     return mysqli_connect("localhost", "root", "", "todolist");
 }
@@ -10,5 +14,6 @@ function insertUser( $fname, $lname, $email, $password ) {
 }
 
 function selectUser( $email, $password ) {
-    mysqli_query(connection(), "SELECT * FROM `users` WHERE `email` = '$email' AND `password` = $password" );
+    $res = mysqli_query(connection(), "SELECT * FROM `users` WHERE `email` = '$email' AND `password` = '$password'" );
+    return mysqli_fetch_assoc($res);
 }

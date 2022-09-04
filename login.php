@@ -21,7 +21,6 @@ if(isset($_POST['submit'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
     $res = selectUser($email, $password);
-    // print_r($res); die;
     if(isset($res)){
         $_SESSION['login'] = $res;
         header("location: index.php");

@@ -8,4 +8,4 @@ include "lib/includes/nav.php";
 
 include "lib/includes/footer.php";
 
-echo $_SESSION['login']['email'];
+echo "<h1 class='text-white text-center'>Welcome ya bro </h1>";
