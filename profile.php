@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // Include Header
 include "lib/includes/header.php";
 

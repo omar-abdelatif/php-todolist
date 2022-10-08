@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
     $password = $_POST['password'];
     $res = insertUser($fname, $lname, $email, $password);
     if($res == 1){
-        header("location: login.php");
+        header("location: profile.php");
     }
 }
 

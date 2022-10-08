@@ -1,19 +1,25 @@
 <?php
-
-// include "../database/config.php";
-
-// $connection = connection();
-// print_r($connection); die;
-function connection(){
-    return mysqli_connect("localhost", "root", "", "todolist");
-}
-
+include "../to_to_list/lib/database/config.php";
 function insertUser( $fname, $lname, $email, $password ) {
-    mysqli_query(connection(), "INSERT INTO `users` (`fname`, `lname`, `email`, `password`) VALUES ('$fname', '$lname', '$email', '$password')" );
-    return mysqli_affected_rows( connection() );
+    $connection = connection();
+    mysqli_query($connection, "INSERT INTO `users` (`fname`, `lname`, `email`, `password`) VALUES ('$fname', '$lname', '$email', '$password')");
+    return mysqli_affected_rows($connection);
 }
-
 function selectUser( $email, $password ) {
-    $res = mysqli_query(connection(), "SELECT * FROM `users` WHERE `email` = '$email' AND `password` = '$password'" );
+    $connection = connection();
+    $query = "SELECT * FROM `users` WHERE `email` = '$email' AND `password` = '$password'";
+    $res = mysqli_query($connection, $query);
     return mysqli_fetch_assoc($res);
+}
+function deleteUser($id){
+    $connection = connection();
+    $query = "DELETE FROM `users` WHERE `id` = $id";
+    mysqli_query($connection, $query);
+    return mysqli_affected_rows($connection);
+}
+function updateUser($id, $name, $email, $password, $img){
+    $connection = connection();
+    $query = "UPDATE `users` SET `name` = '$name', `email` = '$email', `password` = '$password', `img` = '$img' WHERE `id` = $id";
+    mysqli_query($connection, $query);
+    return mysqli_affected_rows($connection);
 }
