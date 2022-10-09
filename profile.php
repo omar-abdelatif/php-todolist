@@ -14,4 +14,4 @@ if (!isset($_SESSION['login'])) {
 echo "<h1 class='d-flex justify-content-center align-items-center text-white'>Profile Page</h1>";
 
 // Include Footer
-include "../lib/includes/footer.php";
+include "lib/includes/footer.php";

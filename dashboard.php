@@ -1,7 +1,11 @@
 <?php
-include "../to_to_list/lib/database/config.php";
-include "../lib/includes/header.php";
-include "../lib/includes/nav.php";
+session_start();
+include "lib/includes/header.php";
+include "lib/includes/nav.php";
+if (!isset($_SESSION['login'])) {
+    header('location: signout.php');
+}
+include "lib/database/config.php";
 ?>
 
 

@@ -13,7 +13,6 @@ if (isset($_POST['submit'])) {
     $password = $_POST['password'];
     $res = insertUser($fname, $lname, $email, $password);
     if ($res == 1) {
-        // $_SESSION['login'] = $res;
         redirect('index.php');
     }
 }
