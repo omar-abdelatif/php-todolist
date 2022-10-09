@@ -5,10 +5,6 @@ include "lib/handlers/insert.php";
 include "lib/database/config.php";
 include "lib/core/functions.php";
 
-if (!isset($_SESSION['login'])) {
-    redirect("location: ../signout.php");
-}
-
 // Signup Script
 if (isset($_POST['submit'])) {
     $fname = $_POST['fname'];
@@ -17,7 +13,8 @@ if (isset($_POST['submit'])) {
     $password = $_POST['password'];
     $res = insertUser($fname, $lname, $email, $password);
     if ($res == 1) {
-        header("location: profile.php");
+        // $_SESSION['login'] = $res;
+        redirect('index.php');
     }
 }
 ?>

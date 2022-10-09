@@ -2,6 +2,8 @@
 
 session_start();
 
+include "lib/core/functions.php";
+
 session_destroy();
 
-header("location: login.php");
+redirect('login.php');

@@ -1,38 +1,27 @@
 <?php
-
 // Session Start
 session_start();
-
-if (!isset($_SESSION['login'])) {
-    header("location: signout.php");
-}
-
 // Include Header
 include "lib/includes/header.php";
-
 // Include Navbar
 include "lib/includes/nav.php";
-
 // Include Connection
 include "lib/database/config.php";
-
 // Include Insert Users
 include "lib/handlers/insert.php";
-
+// Include Functions
+include "lib/core/functions.php";
 // Login Script
-
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $res = selectUser($email, $password);
     if (isset($res)) {
         $_SESSION['login'] = $res;
-        header("location: index.php");
+        redirect('index.php');
     }
 }
-
 ?>
-
 <form action="login.php" method="post">
     <div class="inputs w-50 mx-auto bg-light mt-5 p-5 rounded text-center">
         <h1 class="title border border-3 border-dark mb-5 text-dark p-3 text-center rounded">Sign In</h1>

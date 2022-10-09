@@ -6,16 +6,4 @@ include "../lib/includes/nav.php";
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <?php include "lib/includes/footer.php"; ?>
