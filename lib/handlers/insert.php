@@ -1,5 +1,4 @@
 <?php
-include "../to_to_list/lib/database/config.php";
 function insertUser( $fname, $lname, $email, $password ) {
     $connection = connection();
     mysqli_query($connection, "INSERT INTO `users` (`fname`, `lname`, `email`, `password`) VALUES ('$fname', '$lname', '$email', '$password')");

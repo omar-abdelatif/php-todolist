@@ -1,26 +1,25 @@
 <?php
-
 include "lib/includes/header.php";
-
 include "lib/includes/nav.php";
-
-include "lib/database/config.php";
-
 include "lib/handlers/insert.php";
+include "lib/database/config.php";
+include "lib/core/functions.php";
+
+if (!isset($_SESSION['login'])) {
+    redirect("location: ../signout.php");
+}
 
 // Signup Script
-
 if (isset($_POST['submit'])) {
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $res = insertUser($fname, $lname, $email, $password);
-    if($res == 1){
+    if ($res == 1) {
         header("location: profile.php");
     }
 }
-
 ?>
 
 <form action="register.php" method="post">

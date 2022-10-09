@@ -3,6 +3,10 @@
 // Session Start
 session_start();
 
+if (!isset($_SESSION['login'])) {
+    header("location: signout.php");
+}
+
 // Include Header
 include "lib/includes/header.php";
 
@@ -17,15 +21,13 @@ include "lib/handlers/insert.php";
 
 // Login Script
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $res = selectUser($email, $password);
-    if(isset($res)){
+    if (isset($res)) {
         $_SESSION['login'] = $res;
         header("location: index.php");
-    } else {
-        header("location: login.php");
     }
 }
 
