@@ -1,7 +1,7 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container">
-        <a class="navbar-brand" href="../index.php">To Do List</a>
+        <a class="navbar-brand" href="index.php">To Do List</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -16,10 +16,10 @@
                     </li>
                 <?php elseif ($_SESSION['login']['email'] == 'admin@admin.com') : ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.php">Home</a>
+                        <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/profile.php">Profile</a>
+                        <a class="nav-link" href="profile.php">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="dashboard.php">Dashboard</a>
@@ -33,7 +33,7 @@
                         <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/profile.php">Profile</a>
+                        <a class="nav-link" href="profile.php">Profile</a>
                     </li>
                     <form class="d-flex" role="search" action="" method="get">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
