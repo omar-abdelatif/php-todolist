@@ -41,11 +41,11 @@ $listOfUsers = users();
                     <?= $user['password'] ?>
                 </td>
                 <td>
-                    not yet
+                    <img src="lib/assets/imgs/<?php $user['img'] ?>" class="rounded img-fluid" width="50" alt="<?= $user['fname'] ?>">
                 </td>
                 <td>
-                    <a href="" class="d-block btn btn-warning mb-2">Edit</a>
-                    <a href="" class="d-block btn btn-danger">Delete</a>
+                    <a href="edituser.php?user_id=<?= $user['id'] ?>" class="d-block btn btn-warning mb-2">Edit</a>
+                    <a href="lib/handlers/delete.php?user_id=<?= $user['id'] ?>" class="d-block btn btn-danger">Delete</a>
                 </td>
             </tr>
         <?php endforeach ?>
