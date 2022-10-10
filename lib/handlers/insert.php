@@ -28,6 +28,8 @@ function users(){
     $res = mysqli_query($connection, $query);
     return mysqli_fetch_all($res, MYSQLI_ASSOC);
 }
-function uploadImage(){
-    
+function uploadImage($tmp_name,$location, $avatar){
+    if(move_uploaded_file($tmp_name, $location)){
+        return $location.$avatar;
+    }
 }
