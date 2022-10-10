@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $res = insertUser($fname, $lname, $email, $password);
-    if ($res == 1) {
+    if ($res) {
         redirect('index.php');
     }
 }

@@ -44,8 +44,12 @@ $listOfUsers = users();
                     <img src="lib/assets/imgs/<?php $user['img'] ?>" class="rounded img-fluid" width="50" alt="<?= $user['fname'] ?>">
                 </td>
                 <td>
-                    <a href="edituser.php?user_id=<?= $user['id'] ?>" class="d-block btn btn-warning mb-2">Edit</a>
-                    <a href="lib/handlers/delete.php?user_id=<?= $user['id'] ?>" class="d-block btn btn-danger">Delete</a>
+                    <?php if ($user['fname'] == 'admin') : ?>
+                        <a href="edituser.php?user_id=<?= $user['id'] ?>" class="d-block btn btn-warning mb-2">Edit</a>
+                    <?php else : ?>
+                        <a href="edituser.php?user_id=<?= $user['id'] ?>" class="d-block btn btn-warning mb-2">Edit</a>
+                        <a href="lib/handlers/delete.php?user_id=<?= $user['id'] ?>" class="d-block btn btn-danger">Delete</a>
+                    <?php endif; ?>
                 </td>
             </tr>
         <?php endforeach ?>
