@@ -22,3 +22,10 @@ function updateUser($id, $name, $email, $password, $img){
     mysqli_query($connection, $query);
     return mysqli_affected_rows($connection);
 }
+function users()
+{
+    $connection = connection();
+    $query = "SELECT * FROM `users`";
+    $res = mysqli_query($connection, $query);
+    return mysqli_fetch_all($res, MYSQLI_ASSOC);
+}

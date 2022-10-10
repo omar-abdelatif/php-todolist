@@ -17,3 +17,4 @@ function updateImgPath($tmp_name, $path, $link){
         return $link;
     }
 }
+function search(){}
