@@ -8,6 +8,8 @@ if (!isset($_SESSION['login'])) {
 include "lib/database/config.php";
 ?>
 
+<h1 class="text-center text-white mt-5">Dashboard Page</h1>
+
 
 
 <?php include "lib/includes/footer.php"; ?>
