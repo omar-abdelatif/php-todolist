@@ -15,6 +15,7 @@ if (isset($_POST['submit'])) {
     if ($res) {
         redirect('index.php');
     }
+    redirect('index.php');
 }
 ?>
 
