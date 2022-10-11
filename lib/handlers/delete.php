@@ -7,5 +7,6 @@ if (!isset($_SESSION['login'])) {
     redirect('../../signout.php');
 }
 $id = $_GET['user_id'];
-deleteUser($id);
+deleteWithImage($id);
+// deleteUser($id);
 redirect('../../dashboard.php');

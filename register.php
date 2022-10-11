@@ -4,22 +4,23 @@ include "lib/includes/nav.php";
 include "lib/handlers/insert.php";
 include "lib/database/config.php";
 include "lib/core/functions.php";
-
 // Signup Script
 if (isset($_POST['submit'])) {
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $avatar = $_FILES['img']['name'];
-    $tmp_name = $_FILES['img']['tmp_name'];
-    $location = "lib/assets/imgs/";
-    $image = uploadImage($tmp_name, $location, $avatar);
-    insertUser($fname, $lname, $email, $password);
-    redirect('index.php');
+    $avatar = implode('', $_FILES['img']['name']);
+    $tmp_name = implode('', $_FILES['img']['tmp_name']);
+    $path = 'lib/assets/imgs/';
+    $location = $path . $avatar;
+    $img = uploadImage($tmp_name, $location);
+    $res = insertUser($fname, $lname, $email, $password, $avatar);
+    if ($res == 1) {
+        redirect('./index.php');
+    }
 }
 ?>
-
 <form action="register.php" method="post" enctype="multipart/form-data">
     <div class="inputs w-50 mx-auto bg-light mt-5 p-5 rounded text-center">
         <h1 class="title border border-3 border-dark mb-5 text-dark p-3 text-center rounded">Sign Up</h1>
@@ -27,7 +28,7 @@ if (isset($_POST['submit'])) {
         <input type="text" name="lname" class="form-control mb-3 border-dark border border-2" placeholder="Last Name">
         <input class="form-control mb-3 border-dark border border-2" type="email" name="email" placeholder="Enter Email">
         <input class="form-control border-dark border border-2 mb-3" type="password" name="password" placeholder="Enter Password">
-        <input type="file" name="img" class="form-control border-dark border border-2">
+        <input type="file" name="img[]" class="form-control border-dark border border-2">
         <button type="submit" class="btn btn-primary mt-4 w-100" name="submit">Submit</button>
     </div>
 </form>

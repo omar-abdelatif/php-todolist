@@ -9,8 +9,7 @@ include "lib/handlers/insert.php";
 include "lib/database/config.php";
 $listOfUsers = users();
 ?>
-
-<table class="table align-middle text-white text-center mt-5">
+<table class="table align-middle text-white text-center mt-5 table-bordered">
     <thead>
         <tr>
             <th>#</th>
@@ -41,7 +40,7 @@ $listOfUsers = users();
                     <?= $user['password'] ?>
                 </td>
                 <td>
-                    <img src="lib/assets/imgs/<?php $user['img'] ?>" class="rounded img-fluid" width="50" alt="<?= $user['fname'] ?>">
+                    <img src="lib/assets/imgs/<?= $user['img']; ?>" class="rounded img-fluid" width="100" alt="<?= $user['fname'] ?>">
                 </td>
                 <td>
                     <?php if ($user['fname'] == 'admin') : ?>
@@ -55,5 +54,4 @@ $listOfUsers = users();
         <?php endforeach ?>
     </tbody>
 </table>
-
 <?php include "lib/includes/footer.php"; ?>
