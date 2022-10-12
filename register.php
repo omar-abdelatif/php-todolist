@@ -1,27 +1,8 @@
 <?php
 include "lib/includes/header.php";
 include "lib/includes/nav.php";
-include "lib/handlers/insert.php";
-include "lib/database/config.php";
-include "lib/core/functions.php";
-// Signup Script
-if (isset($_POST['submit'])) {
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $avatar = implode('', $_FILES['img']['name']);
-    $tmp_name = implode('', $_FILES['img']['tmp_name']);
-    $path = 'lib/assets/imgs/';
-    $location = $path . $avatar;
-    $img = uploadImage($tmp_name, $location);
-    $res = insertUser($fname, $lname, $email, $password, $avatar);
-    if ($res == 1) {
-        redirect('./index.php');
-    }
-}
 ?>
-<form action="register.php" method="post" enctype="multipart/form-data">
+<form action="lib/handlers/handle_signup.php" method="post" enctype="multipart/form-data">
     <div class="inputs w-50 mx-auto bg-light mt-5 p-5 rounded text-center">
         <h1 class="title border border-3 border-dark mb-5 text-dark p-3 text-center rounded">Sign Up</h1>
         <input type="text" name="fname" class="form-control mb-3 border-dark border border-2" placeholder="First Name">
@@ -32,3 +13,4 @@ if (isset($_POST['submit'])) {
         <button type="submit" class="btn btn-primary mt-4 w-100" name="submit">Submit</button>
     </div>
 </form>
+<?php include "lib/includes/footer.php" ?>

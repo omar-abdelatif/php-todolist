@@ -11,6 +11,8 @@ if (!isset($_SESSION['login'])) {
 }
 ?>
 
+<h1 class="text-center text-white mt-5">welcome ya <?php echo $_SESSION['login']['fname'] ?> <?php echo $_SESSION['login']['lname'] ?></h1>
+
 <h1 class='d-flex justify-content-center align-items-center text-white mt-5'>Profile Page</h1>
 
 //! Include Footer
