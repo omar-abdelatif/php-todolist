@@ -1,5 +1,7 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,4 +14,5 @@
     <link rel="stylesheet" href="lib/assets/styles/bootstrap.min.css">
     <link rel="stylesheet" href="lib/assets/styles/styles.css">
 </head>
+
 <body class="bg-dark">

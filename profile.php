@@ -1,5 +1,4 @@
 <?php
-session_start();
 //! Include Header
 include "lib/includes/header.php";
 //! Include Navbar
@@ -11,7 +10,7 @@ if (!isset($_SESSION['login'])) {
 }
 ?>
 
-<h1 class="text-center text-white mt-5">welcome ya <?php echo $_SESSION['login']['fname'] ?> <?php echo $_SESSION['login']['lname'] ?></h1>
+<h1 class="text-center text-white mt-5">welcome ya zmely</h1>
 
 <h1 class='d-flex justify-content-center align-items-center text-white mt-5'>Profile Page</h1>
 
