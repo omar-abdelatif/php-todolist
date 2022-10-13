@@ -37,7 +37,12 @@ if (isset($_POST['submit'])) {
             $errors[] = 'Email is required';
         } elseif (!emailVal($email)) {
             $errors[] = 'Plz Insert Valid Email';
-        } elseif (emailExistence($email));
+        } elseif (emailExistence($email)) {
+            $errors[] = 'Email already exists';
+        }
+        if (imgSizeVal($img_size)) {
+            $errors[] = "Image Size Exceeds The Limit";
+        }
         $res = insertUser($fname, $lname, $email, $password, $avatar);
         $_SESSION['sucess'] = $sucess;
         redirect('../../index.php');

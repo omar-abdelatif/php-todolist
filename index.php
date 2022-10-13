@@ -1,7 +1,10 @@
 <?php
-include "lib/core/functions.php";
+//! Include Header
 include "lib/includes/header.php";
+//! Include Navbar
 include "lib/includes/nav.php";
+//! Include Functionsgit 
+include "lib/core/functions.php";
 if (!isset($res)) {
     redirect('signout.php');
 }

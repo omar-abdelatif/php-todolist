@@ -31,7 +31,13 @@ function emailExistence($email)
     $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
     foreach ($result as $res) {
         if ($email == $res['email']) {
-            $errors[] = 'Email Already Exist';
+            return false;
         }
+    }
+}
+function imgSizeVal($img_size)
+{
+    if ($img_size > 5000000) {
+        return false;
     }
 }

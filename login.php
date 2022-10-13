@@ -3,15 +3,6 @@
 include "lib/includes/header.php";
 //! Include Navbar
 include "lib/includes/nav.php";
-//! Include Connection
-include "lib/database/config.php";
-//! Include Insert Users
-include "lib/handlers/insert.php";
-//! Include Functions
-include "lib/core/functions.php";
-//! Include Validation
-include "lib/core/validations.php";
-
 ?>
 <div class="title">
     <h1 class="border border-3 border-dark mb-5 text-dark p-3 text-center text-white rounded">Sign In</h1>

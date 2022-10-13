@@ -1,5 +1,7 @@
 <?php
+//! Include Header
 include "lib/includes/header.php";
+//! Include Navbar
 include "lib/includes/nav.php";
 ?>
 <div class="title border border-3 border-white w-50 mx-auto rounded mt-5">
