@@ -3,9 +3,9 @@
 include "lib/includes/header.php";
 //! Include Navbar
 include "lib/includes/nav.php";
-//! Include Functionsgit 
+//! Include Functions
 include "lib/core/functions.php";
-if (!isset($res)) {
+if (!isset($_SESSION['login'])) {
     redirect('signout.php');
 }
 ?>

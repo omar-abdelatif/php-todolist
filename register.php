@@ -13,12 +13,15 @@ include "lib/includes/nav.php";
             <?php echo $error; ?>
         </div>
     <?php endforeach ?>
-<?php else : ?>
-    <div class="mt-5 w-50 mx-auto alert alert-success text-center">
-        <?php echo $_SESSION['success']; ?>
-    </div>
 <?php endif ?>
 <?php unset($_SESSION['errors']); ?>
+<?php if (isset($_SESSION['success'])) : ?>
+    <?php foreach ($_SESSION['success'] as $success) : ?>
+        <div class="mt-5 w-50 mx-auto alert alert-success text-center">
+            <?php echo $_SESSION['success']; ?>
+        </div>
+    <?php endforeach ?>
+<?php endif; ?>
 <?php unset($_SESSION['success']); ?>
 <form action="lib/handlers/handle_signup.php" method="post" enctype="multipart/form-data">
     <div class="inputs w-50 mx-auto bg-light mt-5 p-5 rounded text-center">

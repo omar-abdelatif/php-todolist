@@ -33,6 +33,20 @@ function emailExistence($email)
         if ($email == $res['email']) {
             return false;
         }
+        return true;
+    }
+}
+function passwordExistance($password)
+{
+    $connection = connection();
+    $select = "SELECT * FROM `users`";
+    $query = mysqli_query($connection, $select);
+    $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
+    foreach ($result as $res) {
+        if ($password !== $res['password']) {
+            return false;
+        }
+        return true;
     }
 }
 function imgSizeVal($img_size)
@@ -40,4 +54,11 @@ function imgSizeVal($img_size)
     if ($img_size > 5000000) {
         return false;
     }
+    return true;
+}
+function allowedExt($allowedExt)
+{
+    // if (in_array()) {
+    // }
+    return true;
 }
