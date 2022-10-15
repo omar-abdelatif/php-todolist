@@ -3,7 +3,8 @@ function insertUser($fname, $lname, $email, $password, $avatar)
 {
     $connection = connection();
     mysqli_query($connection, "INSERT INTO `users` (`fname`, `lname`, `email`, `password`, `img`) VALUES ('$fname', '$lname', '$email', '$password', '$avatar')");
-    return mysqli_affected_rows($connection);
+    $affected = mysqli_affected_rows($connection);
+    return $affected;
 }
 function selectUser( $email, $password ) {
     $connection = connection();
@@ -50,4 +51,12 @@ function deleteWithImage($id)
         mysqli_query($connection, $deleteSql);
         mysqli_affected_rows($connection);
     }
+}
+function getUserById($id)
+{
+    $connection = connection();
+    $selectsql = "SELECT * FROM `users` WHERE `id` = $id";
+    $rsSelect = mysqli_query($connection, $selectsql);
+    $getRow = mysqli_fetch_assoc($rsSelect);
+    return $getRow;
 }

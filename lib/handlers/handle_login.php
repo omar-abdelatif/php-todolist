@@ -11,7 +11,7 @@ if (!isset($_SESSION['login'])) {
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $res = selectUser($email, $password);
+    $result = selectUser($email, $password);
     $_SESSION['login'] = $result;
     redirect('../../index.php');
 }

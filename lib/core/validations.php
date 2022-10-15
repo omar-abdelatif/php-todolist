@@ -30,7 +30,7 @@ function emailExistence($email)
     $query = mysqli_query($connection, $select);
     $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
     foreach ($result as $res) {
-        if ($email == $res['email']) {
+        if ($email !== $res['email']) {
             return false;
         }
         return true;

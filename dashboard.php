@@ -17,6 +17,7 @@ $listOfUsers = users();
             <th>Email</th>
             <th>Password</th>
             <th>Images</th>
+            <th>Tasks</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -40,6 +41,9 @@ $listOfUsers = users();
                 </td>
                 <td>
                     <img src="lib/assets/imgs/<?= $user['img']; ?>" class="rounded img-fluid" width="100" alt="<?= $user['fname'] ?>">
+                </td>
+                <td>
+                    not yet
                 </td>
                 <td>
                     <?php if ($user['fname'] == 'admin') : ?>
