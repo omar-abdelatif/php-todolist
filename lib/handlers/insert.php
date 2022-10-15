@@ -4,7 +4,11 @@ function insertUser($fname, $lname, $email, $password, $avatar)
     $connection = connection();
     mysqli_query($connection, "INSERT INTO `users` (`fname`, `lname`, `email`, `password`, `img`) VALUES ('$fname', '$lname', '$email', '$password', '$avatar')");
     $affected = mysqli_affected_rows($connection);
-    return $affected;
+    if ($affected) {
+        return true;
+    } else {
+        return false;
+    }
 }
 function selectUser( $email, $password ) {
     $connection = connection();

@@ -26,12 +26,12 @@ function emailVal($email){
 function emailExistence($email)
 {
     $connection = connection();
-    $select = "SELECT * FROM `users`";
+    $select = "SELECT `email` FROM `users`";
     $query = mysqli_query($connection, $select);
     $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
     foreach ($result as $res) {
-        if ($email !== $res['email']) {
-            return false;
+        if ($email == $res['email']) {
+            return true;
         }
         return true;
     }
@@ -54,11 +54,5 @@ function imgSizeVal($img_size)
     if ($img_size > 5000000) {
         return false;
     }
-    return true;
-}
-function allowedExt($allowedExt)
-{
-    // if (in_array()) {
-    // }
     return true;
 }

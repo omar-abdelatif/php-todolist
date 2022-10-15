@@ -16,9 +16,12 @@ if (isset($_POST['submit'])) {
     $lname = $_POST['lname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $img = implode('', $_FILES['img']['name']);
+    $tmp_name = $_FILES['img']['tmp_name'];
+    $img = $_FILES['img']['name'];
+    $path = '../assets/imgs/';
+    $location = $path . $img;
+    uploadImage($tmp_name, $location);
     updateUser($id, $fname, $lname, $email, $password, $img);
     redirect('../../dashboard.php');
+    die;
 }
-
-echo "hello from update page";
