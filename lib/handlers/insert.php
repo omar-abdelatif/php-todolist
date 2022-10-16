@@ -64,3 +64,10 @@ function getUserById($id)
     $getRow = mysqli_fetch_assoc($rsSelect);
     return $getRow;
 }
+function listOfTasks()
+{
+    $connection = connection();
+    $query = "SELECT * FROM `tasks`";
+    $res = mysqli_query($connection, $query);
+    return mysqli_num_rows($res);
+}

@@ -1,12 +1,13 @@
 <?php
-include "lib/includes/header.php";
-include "lib/includes/nav.php";
-if (!isset($_SESSION['login'])) {
-    header('location: signout.php');
-}
-include "lib/handlers/insert.php";
-include "lib/database/config.php";
-$listOfUsers = users();
+    include "lib/includes/header.php";
+    include "lib/includes/nav.php";
+    include "lib/core/functions.php";
+    if (!isset($_SESSION['login'])) {
+        redirect('signout.php');
+    }
+    include "lib/handlers/insert.php";
+    include "lib/database/config.php";
+    $listOfUsers = users();
 ?>
 <table class="table align-middle text-white text-center mt-5 table-bordered">
     <thead>

@@ -22,10 +22,10 @@ if (isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     $img_size = $_FILES['img']['size'];
     $type = $_FILES['img']['type'];
     $type = explode('/', $type);
-    $img_type = $type[1];
     $path = 'lib/assets/imgs/';
     $location = $path . $avatar;
     $allowedExt = ['jpg', 'png', 'jpeg', 'gif'];
+    $imgExt = strtolower(end($type));
     //! Validation
     if (empty($fname)) {
         $errors[] = "First Name Is Required";
@@ -47,17 +47,17 @@ if (isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($avatar)) {
         $errors[] = "Img Is Required";
     }
-    if ($img_size > 5000000) {
-        $errors[] = "The Image Exceeds The Limit";
+    if ($img_size > 5242880) {
+        $errors[] = "The Image Exceeds The Limit 5MB";
     }
-    if (!in_array($img_type, $allowedExt)) {
+    if (!in_array($imgExt, $allowedExt)) {
         $errors[] = "File Extention Is Not Supported";
     }
     if (empty($errors)) {
         uploadImage($tmp_name, $location);
         insertUser($fname, $lname, $email, $password, $avatar);
         $_SESSION['success'] = "User Inserted Successfully";
-        redirect('login.php');
+        // redirect('login.php');
     } else {
         $_SESSION['errors'] = $errors;
         redirect('register.php');

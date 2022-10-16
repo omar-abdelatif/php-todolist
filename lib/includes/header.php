@@ -10,8 +10,9 @@
     <meta name="theme-color" content="#319197">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link rel="shortcut icon" href="lib/assets/imgs/favicon.png">
-    <link rel="stylesheet" href="lib/assets/styles/bootstrap.min.css">
+    <link rel="shortcut icon" href="lib/assets/imgs/31d8d060181965.5a4071262edeb.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="lib/assets/styles/bootstrap.min.css"> -->
     <link rel="stylesheet" href="lib/assets/styles/styles.css">
 </head>
 

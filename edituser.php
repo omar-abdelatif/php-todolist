@@ -1,12 +1,12 @@
 <?php
-include "lib/includes/header.php";
-include "lib/includes/nav.php";
-include "lib/core/functions.php";
-include "lib/handlers/insert.php";
-include "lib/database/config.php";
-if (!isset($_SESSION['login'])) { redirect('login.php'); }
-$id = $_GET['user_id'];
-$user = getUserById($id);
+    include "lib/includes/header.php";
+    include "lib/includes/nav.php";
+    include "lib/core/functions.php";
+    include "lib/handlers/insert.php";
+    include "lib/database/config.php";
+    if (!isset($_SESSION['login'])) { redirect('login.php'); }
+    $id = $_GET['user_id'];
+    $user = getUserById($id);
 ?>
 <div class="title border border-3 border-white w-50 mx-auto rounded mt-5">
     <h1 class="text-white p-3 text-center">Edit User Page</h1>

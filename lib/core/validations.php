@@ -33,7 +33,6 @@ function emailExistence($email)
         if ($email == $res['email']) {
             return true;
         }
-        return true;
     }
 }
 function passwordExistance($password)
