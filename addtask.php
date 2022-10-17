@@ -15,3 +15,6 @@ if (!isset($_SESSION['login'])) {
 <div class="task_title border border-white border-2 w-50 mx-auto p-3 rounded">
     <h1 class="text-center text-white">Add Task Here</h1>
 </div>
+<form action="lib/handlers/tasks/addtodo.php" method="post">
+    <button type="submit" name="submit" class="btn-btn-primary">Submit</button>
+</form>

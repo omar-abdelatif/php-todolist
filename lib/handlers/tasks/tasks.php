@@ -1,6 +1,5 @@
 <?php
-//! Include Insert
-include "../insert.php";
+//! Functions
 function insert($id, $title, $date)
 {
     $connection = connection();
@@ -30,7 +29,7 @@ function updateTask($id, $title, $date)
 function tasks()
 {
     $connection = connection();
-    $query = "SELECT * FROM `users`";
+    $query = "SELECT * FROM `tasks`";
     $res = mysqli_query($connection, $query);
     return mysqli_fetch_all($res, MYSQLI_ASSOC);
 }
