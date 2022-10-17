@@ -19,7 +19,7 @@ $listOfTasks = tasks();
 // die;
 ?>
 
-<h1 class="text-center text-white mt-5 mb-5">Tasks Page For The User</h1>
+<h1 class="text-center text-white mt-5 mb-5">Task Page For The User</h1>
 <div class="addtask">
     <a href="addtask.php" class="btn btn-primary mb-3">Add Task</a>
 </div>
@@ -32,16 +32,30 @@ $listOfTasks = tasks();
         <th>Action</th>
     </thead>
     <tbody>
-        <?php foreach ($listOfTasks as $task) : ?>
-            <tr><?= $task['id'] ?></tr>
-            <tr><?= $task['title'] ?></tr>
-            <tr><?= $task['date'] ?></tr>
-            <tr><?= $task['status'] ?></tr>
-            <tr>
-                <a href="" class="btn btn-warning">Edit</a>
-                <a href="" class="btn btn-danger">Delete</a>
-            </tr>
-        <?php endforeach ?>
+        <?php if (count($listOfTasks) > 0) : ?>
+            <?php foreach ($listOfTasks as $task) : ?>
+                <tr>
+                    <td>
+                        <?= $task['id'] ?>
+                    </td>
+                    <td>
+                        <?= $task['title'] ?>
+                    </td>
+                    <td>
+                        <?= $task['date'] ?>
+                    </td>
+                    <td>
+                        not yet
+                    </td>
+                    <td>
+                        <a href="lib/handlers/tasks/edit.php?task_id=<?= $task['id'] ?>" class="btn btn-warning d-block mb-2">Edit</a>
+                        <a href="lib/handlers/tasks/deletetask.php?task_id=<?= $task['id'] ?>" class="btn btn-danger d-block">Delete</a>
+                    </td>
+                </tr>
+            <?php endforeach ?>
+        <?php else : ?>
+            <h1 class="text-center text-white mb-2">No Tasks To Show</h1>
+        <?php endif ?>
     </tbody>
 </table>
 
