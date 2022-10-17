@@ -10,7 +10,7 @@ include "lib/includes/nav.php";
 <?php if (isset($_SESSION['errors'])) : ?>
     <div class="alert alert-danger w-50 mx-auto mt-5 text-center">
         <?php foreach ($_SESSION['errors'] as $error) : ?>
-            <p class="text-center">
+            <p class="text-center m-0">
                 <?= $error ?>
             </p>
         <?php endforeach; ?>

@@ -19,7 +19,10 @@ $listOfTasks = tasks();
 // die;
 ?>
 
-<h1 class="text-center text-white mt-5">Tasks Page For The User</h1>
+<h1 class="text-center text-white mt-5 mb-5">Tasks Page For The User</h1>
+<div class="addtask">
+    <a href="addtask.php" class="btn btn-primary mb-3">Add Task</a>
+</div>
 <table class="table table-bordered align-middle text-center text-white">
     <thead>
         <th>#</th>

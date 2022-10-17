@@ -1,9 +1,9 @@
 <?php
 //! Functions
-function insert($id, $title, $date)
+function insertTask($title, $date)
 {
     $connection = connection();
-    $taskSelect = "INSERT INTO `tasks` (`id`,`title`,`date`) VALUES ('$id','$title','$date')";
+    $taskSelect = "INSERT INTO `tasks` (`title`,`date`) VALUES ('$title','$date')";
     mysqli_query($connection, $taskSelect);
     $affected = mysqli_affected_rows($connection);
     if ($affected) {
@@ -32,4 +32,12 @@ function tasks()
     $query = "SELECT * FROM `tasks`";
     $res = mysqli_query($connection, $query);
     return mysqli_fetch_all($res, MYSQLI_ASSOC);
+}
+function isRealDate($date)
+{
+    if (false === strtotime($date)) {
+        return false;
+    }
+    list($year, $month, $day) = explode('-', $date);
+    return checkdate($month, $day, $year);
 }
