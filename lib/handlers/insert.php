@@ -25,7 +25,12 @@ function deleteUser($id){
 function updateUser($id, $fname, $lname, $email, $password, $img)
 {
     $connection = connection();
-    $query = "UPDATE `users` SET `fname` = '$fname', `lname` = '$lname', `email` = '$email', `password` = '$password', `img` = '$img' WHERE `id` = $id";
+    if (!empty($img)) {
+        $extra = ", `img` = '$img'";
+    } else {
+        $extra = "";
+    }
+    $query = "UPDATE `users` SET `fname` = '$fname', `lname` = '$lname', `email` = '$email', `password` = '$password' $extra WHERE `id` = $id";
     mysqli_query($connection, $query);
     return mysqli_affected_rows($connection);
 }
