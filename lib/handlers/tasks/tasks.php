@@ -6,7 +6,11 @@ function insertTask($title, $date, $user_id)
     $taskSelect = "INSERT INTO `tasks` (`title`,`date`, `user_id`) VALUES ('$title','$date', $user_id)";
     mysqli_query($connection, $taskSelect);
     $affected = mysqli_affected_rows($connection);
-    return $affected;
+    if ($affected) {
+        return true;
+    } else {
+        return false;
+    }
 }
 function deleteTask($id)
 {

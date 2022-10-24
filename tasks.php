@@ -48,7 +48,7 @@ $listOfTasks = tasks();
                         not yet
                     </td>
                     <td>
-                        <a href="lib/handlers/tasks/edit.php?task_id=<?= $task['id'] ?>" class="btn btn-warning d-block mb-2">Edit</a>
+                        <a href="edittask.php?task_id=<?= $task['id'] ?>" class="btn btn-warning d-block mb-2">Edit</a>
                         <a href="lib/handlers/tasks/deletetask.php?task_id=<?= $task['id'] ?>" class="btn btn-danger d-block">Delete</a>
                     </td>
                 </tr>
