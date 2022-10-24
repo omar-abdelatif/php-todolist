@@ -10,6 +10,7 @@ $id = $_GET['task_id'];
         <h1 class="text-white text-center">Edit User</h1>
     </div>
     <form action="lib/handlers/tasks/edit.php" class="rounded p-3 bg-light w-50 mx-auto" method="post">
+        <input type="hidden" name="id" value="<?= $id ?>">
         <input type="text" name="title" class="form-control border border-dark border-2 mb-2 text-center" placeholder="Task Title">
         <input type="date" name="date" class="form-control border border-dark border-2 mb-2 text-center" placeholder="Date">
         <button type="submit" name="submit" class="btn btn-primary text-center w-100">Submit</button>

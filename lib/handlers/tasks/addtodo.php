@@ -11,15 +11,12 @@ include "tasks.php";
 if (!isset($_SESSION['login'])) {
     redirect('../../../signout.php');
 }
-
 //! Add TODO SCRIPT
 if (isset($_POST['submit'])) {
     $errors = [];
     $title = $_POST['title'];
     $date = $_POST['date'];
     $user_id = $_SESSION['login']['id'];
-    // echo $user_id;
-    // die;
     //! Validation
     if (empty($title)) {
         $errors[] = "Title Is Required";
@@ -28,7 +25,10 @@ if (isset($_POST['submit'])) {
         $errors[] = "Invalid Date";
     }
     if (empty($errors)) {
-        insertTask($title, $date, $user_id);
+        $res = insertTask($title, $date, $user_id);
+        if ($res == 1) {
+            redirect('../../../tasks.php');
+        }
         $_SESSION['success'] = 'Task Inserted Successfully';
         redirect('../../../tasks.php');
     } else {

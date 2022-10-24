@@ -13,10 +13,7 @@ include "lib/database/config.php";
 if (!isset($_SESSION['login'])) {
     redirect('signout.php');
 }
-$listOfTasks = tasks();
-// echo "<pre>";
-// print_r($listOfTasks);
-// die;
+$listOfTasks = tasks($_SESSION['login']['id']);
 ?>
 
 <h1 class="text-center text-white mt-5 mb-5">Task Page For The User</h1>
@@ -32,30 +29,27 @@ $listOfTasks = tasks();
         <th>Action</th>
     </thead>
     <tbody>
-        <?php if (count($listOfTasks) > 0) : ?>
-            <?php foreach ($listOfTasks as $task) : ?>
-                <tr>
-                    <td>
-                        <?= $task['id'] ?>
-                    </td>
-                    <td>
-                        <?= $task['title'] ?>
-                    </td>
-                    <td>
-                        <?= $task['date'] ?>
-                    </td>
-                    <td>
-                        not yet
-                    </td>
-                    <td>
-                        <a href="edittask.php?task_id=<?= $task['id'] ?>" class="btn btn-warning d-block mb-2">Edit</a>
-                        <a href="lib/handlers/tasks/deletetask.php?task_id=<?= $task['id'] ?>" class="btn btn-danger d-block">Delete</a>
-                    </td>
-                </tr>
-            <?php endforeach ?>
-        <?php else : ?>
-            <h1 class="text-center text-white mb-2">No Tasks To Show</h1>
-        <?php endif ?>
+        <?php foreach ($listOfTasks as $task) : ?>
+            <tr>
+                <td>
+                    <?= $task['id'] ?>
+                </td>
+                <td>
+                    <?= $task['title'] ?>
+                </td>
+                <td>
+                    <?= $task['date'] ?>
+                </td>
+                <td>
+                    <?= $_SESSION['login']['id'] ?>
+                </td>
+                <td>
+                    <a href="edittask.php?task_id=<?= $task['id'] ?>" class="btn btn-warning d-block mb-2">Edit</a>
+                    <a href="lib/handlers/tasks/deletetask.php?task_id=<?= $task['id'] ?>" class="btn btn-danger d-block">Delete</a>
+                </td>
+
+            </tr>
+        <?php endforeach ?>
     </tbody>
 </table>
 
