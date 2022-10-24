@@ -29,27 +29,30 @@ $listOfTasks = tasks($_SESSION['login']['id']);
         <th>Action</th>
     </thead>
     <tbody>
-        <?php foreach ($listOfTasks as $task) : ?>
-            <tr>
-                <td>
-                    <?= $task['id'] ?>
-                </td>
-                <td>
-                    <?= $task['title'] ?>
-                </td>
-                <td>
-                    <?= $task['date'] ?>
-                </td>
-                <td>
-                    <?= $_SESSION['login']['id'] ?>
-                </td>
-                <td>
-                    <a href="edittask.php?task_id=<?= $task['id'] ?>" class="btn btn-warning d-block mb-2">Edit</a>
-                    <a href="lib/handlers/tasks/deletetask.php?task_id=<?= $task['id'] ?>" class="btn btn-danger d-block">Delete</a>
-                </td>
-
-            </tr>
-        <?php endforeach ?>
+        <?php if (count($listOfTasks) > 0) : ?>
+            <?php foreach ($listOfTasks as $task) : ?>
+                <tr>
+                    <td>
+                        <?= $task['id'] ?>
+                    </td>
+                    <td>
+                        <?= $task['title'] ?>
+                    </td>
+                    <td>
+                        <?= $task['date'] ?>
+                    </td>
+                    <td>
+                        not yet
+                    </td>
+                    <td>
+                        <a href="edittask.php?task_id=<?= $task['id'] ?>" class="btn btn-warning d-block mb-2">Edit</a>
+                        <a href="lib/handlers/tasks/deletetask.php?task_id=<?= $task['id'] ?>" class="btn btn-danger d-block">Delete</a>
+                    </td>
+                </tr>
+            <?php endforeach ?>
+        <?php else : ?>
+            <h1 class="text-center text-white mb-2">No Tasks To Show</h1>
+        <?php endif ?>
     </tbody>
 </table>
 

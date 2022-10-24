@@ -16,12 +16,13 @@ if (isset($_POST['submit'])) {
     $errors = [];
     $title = $_POST['title'];
     $date = $_POST['date'];
+    $currentDate = gettimeofday();
     $user_id = $_SESSION['login']['id'];
     //! Validation
     if (empty($title)) {
         $errors[] = "Title Is Required";
     }
-    if (!strtotime($date)) {
+    if (!strtotime($date) || $date < $currentDate) {
         $errors[] = "Invalid Date";
     }
     if (empty($errors)) {
