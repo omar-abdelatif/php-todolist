@@ -27,3 +27,7 @@ function tasks($user_id)
     $res = mysqli_query($connection, "SELECT * FROM `tasks` WHERE `user_id` = $user_id");
     return mysqli_fetch_all($res, MYSQLI_ASSOC);
 }
+//! Search Task
+function search()
+{
+}

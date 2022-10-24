@@ -15,7 +15,6 @@ if (!isset($_SESSION['login'])) {
 }
 $listOfTasks = tasks($_SESSION['login']['id']);
 ?>
-
 <h1 class="text-center text-white mt-5 mb-5">Task Page For The User</h1>
 <div class="addtask">
     <a href="addtask.php" class="btn btn-primary mb-3">Add Task</a>
@@ -46,6 +45,7 @@ $listOfTasks = tasks($_SESSION['login']['id']);
                     </td>
                     <td>
                         <a href="edittask.php?task_id=<?= $task['id'] ?>" class="btn btn-warning d-block mb-2">Edit</a>
+                        <a href="lib/handlers/tasks/done.php" class="btn btn-success d-block mb-2">Check</a>
                         <a href="lib/handlers/tasks/deletetask.php?task_id=<?= $task['id'] ?>" class="btn btn-danger d-block">Delete</a>
                     </td>
                 </tr>
@@ -55,5 +55,4 @@ $listOfTasks = tasks($_SESSION['login']['id']);
         <?php endif ?>
     </tbody>
 </table>
-
 <?php include "lib/includes/footer.php" ?>
