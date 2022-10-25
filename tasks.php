@@ -32,9 +32,9 @@ $listOfTasks = tasks($_SESSION['login']['id']);
             <?php foreach ($listOfTasks as $task) : ?>
                 <?php if ($task['status'] == 1) : ?>
                     <tr class="bg-primary">
-                    <?php else : ?>
+                <?php else : ?>
                     <tr>
-                    <?php endif ?>
+                <?php endif ?>
                     <td>
                         <?= $task['id'] ?>
                     </td>
@@ -53,10 +53,10 @@ $listOfTasks = tasks($_SESSION['login']['id']);
                         <a href="lib/handlers/tasks/deletetask.php?task_id=<?= $task['id'] ?>" class="btn btn-danger d-block">Delete</a>
                     </td>
                     </tr>
-                <?php endforeach ?>
-            <?php else : ?>
-                <h1 class="text-center text-white mb-2">No Tasks To Show</h1>
-            <?php endif ?>
+            <?php endforeach ?>
+        <?php else : ?>
+            <h1 class="text-center text-white mb-2">No Tasks To Show</h1>
+        <?php endif ?>
     </tbody>
 </table>
 <?php include "lib/includes/footer.php" ?>
