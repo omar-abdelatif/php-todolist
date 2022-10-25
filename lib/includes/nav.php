@@ -38,10 +38,6 @@
             </ul>
             <?php if (isset($_SESSION['login'])) : ?>
                 <ul class="navbar-nav mr-auto">
-                    <form class="d-flex" action="lib/handlers/search.php" method="get">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" name="submit" type="submit">Search</button>
-                    </form>
                     <li class="nav-item">
                         <a class="nav-link" href="signout.php">SignOut</a>
                     </li>
