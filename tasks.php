@@ -30,7 +30,11 @@ $listOfTasks = tasks($_SESSION['login']['id']);
     <tbody>
         <?php if (count($listOfTasks) > 0) : ?>
             <?php foreach ($listOfTasks as $task) : ?>
-                <tr>
+                <?php if ($task['status'] == 1) : ?>
+                    <tr class="bg-primary">
+                    <?php else : ?>
+                    <tr>
+                    <?php endif ?>
                     <td>
                         <?= $task['id'] ?>
                     </td>
@@ -45,14 +49,14 @@ $listOfTasks = tasks($_SESSION['login']['id']);
                     </td>
                     <td>
                         <a href="edittask.php?task_id=<?= $task['id'] ?>" class="btn btn-warning d-block mb-2">Edit</a>
-                        <a href="lib/handlers/tasks/done.php" class="btn btn-success d-block mb-2">Check</a>
+                        <a href="lib/handlers/tasks/done.php?task_id=<?= $task['id'] ?>" class="btn btn-success d-block mb-2">Check</a>
                         <a href="lib/handlers/tasks/deletetask.php?task_id=<?= $task['id'] ?>" class="btn btn-danger d-block">Delete</a>
                     </td>
-                </tr>
-            <?php endforeach ?>
-        <?php else : ?>
-            <h1 class="text-center text-white mb-2">No Tasks To Show</h1>
-        <?php endif ?>
+                    </tr>
+                <?php endforeach ?>
+            <?php else : ?>
+                <h1 class="text-center text-white mb-2">No Tasks To Show</h1>
+            <?php endif ?>
     </tbody>
 </table>
 <?php include "lib/includes/footer.php" ?>

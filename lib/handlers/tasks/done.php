@@ -11,3 +11,9 @@ include "../../core/functions.php";
 if (!isset($_SESSION['login'])) {
     redirect('../../../signout.php');
 }
+$id = $_GET['task_id'];
+$res = done($id);
+if ($res == 1) {
+    redirect('../../../tasks.php');
+    die;
+}

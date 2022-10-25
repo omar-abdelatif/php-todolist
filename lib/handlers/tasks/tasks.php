@@ -27,7 +27,17 @@ function tasks($user_id)
     $res = mysqli_query($connection, "SELECT * FROM `tasks` WHERE `user_id` = $user_id");
     return mysqli_fetch_all($res, MYSQLI_ASSOC);
 }
-//! Search Task
-function search()
+
+//! Done Task
+function done($todo_id)
 {
+    $connection = connection();
+    $res = mysqli_query($connection, "SELECT * FROM `tasks` WHERE `id` = $todo_id");
+    $taskRow = mysqli_fetch_assoc($res);
+    if ($taskRow['status'] == 1) {
+        mysqli_query($connection, "UPDATE `tasks` SET `status` = 0 WHERE `id` = $todo_id");
+    } else {
+        mysqli_query($connection, "UPDATE `tasks` SET `status` = 1 WHERE `id` = $todo_id");
+    }
+    return mysqli_affected_rows($connection);
 }
