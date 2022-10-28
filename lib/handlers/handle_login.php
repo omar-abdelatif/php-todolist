@@ -7,7 +7,6 @@ include "../core/validations.php";
 if (!isset($_SESSION['login'])) {
     redirect('../../signout.php');
 }
-
 //! Login Script
 if (isset($_POST['submit'])) {
     $errors = [];
