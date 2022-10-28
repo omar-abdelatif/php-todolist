@@ -72,3 +72,9 @@ function getUserById($id)
 function search()
 {
 }
+function Join()
+{
+    $connection = connection();
+    $selectTask = "SELECT * FROM `tasks`";
+    $join = "INNER JOIN `users` ON `tasks`.`user_id` = `users`.`id`";
+}
